@@ -1,0 +1,8 @@
+<span
+class="glyphicon"
+[ngClass]="{
+    'glyphicon-star': isSpecial,
+    'glyphicon-star-empty': !isSpecial
+}"
+(click)="onClick()"
+></span>
