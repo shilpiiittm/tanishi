@@ -17,6 +17,7 @@ export class SignupFormComponent {
     password: new FormControl(' ', Validators.required)
   });
 
+  // twattest
   get username() {
     return this.form.get('username');
   }
