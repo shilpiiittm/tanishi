@@ -1,35 +1,28 @@
-//import { } from './username.validators';
-import { AbstractControl, ValidationErrors, } from '@angular/forms';
+import {AbstractControl, ValidationErrors} from '@angular/forms';
 
 
 export class UsernameValidators {
-    static cannotContainSpace(control: AbstractControl): ValidationErrors | null {
-        if ((control.value as string).indexOf(' ') >= 0)
-            return { cannotContainSpace: true };
+  static cannotContainSpace(control: AbstractControl): ValidationErrors | null {
+    if ((control.value as string).indexOf(' ') >= 0)
+      return {cannotContainSpace: true};
 
-        return null;
-    }
+    return null;
+  }
 
-    static shouldBeUnique(control: AbstractControl): Promise<ValidationErrors | null> {
-        return new Promise((resolve, reject) => {
-            
-            console.log('>>',control.value)
-            setTimeout(() => {
+  static shouldBeUnique(control: AbstractControl): Promise<ValidationErrors | null> {
 
-                if (control.value === 'mosh'){
-                    console.log('>>----------:',control.value)
-                    
-                    resolve({ shouldBeUnique: true });
-                }
-                    
-                else
-                    resolve(null);
+    return new Promise((resolve, reject) => {
 
-            }, 2000);
+      setTimeout(() => {
+        if (control.value === 'mosh') {
+          resolve({shouldBeUnique: true});
+        } else {
+          resolve(null);
+        }
+      }, 2000);
 
-        });
+    });
 
 
-
-    }
+  }
 }

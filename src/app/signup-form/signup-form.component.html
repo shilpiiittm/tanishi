@@ -2,10 +2,10 @@
 
     <div class="form-group">
         <label for="username">Username</label>
-        <input 
-        formControlName="username" 
-        id="username" 
-        type="text" 
+        <input
+        formControlName="username"
+        id="username"
+        type="text"
         class="form-control">
         <div *ngIf="username.pending">Checking for uniqueness...</div>
         <div *ngIf="username.touched && username.invalid" class="alert alert-danger">
@@ -13,7 +13,7 @@
             <div *ngIf="username.errors.minlength">Username should be minimum
                 {{username.errors.minlength.requiredLength }} characters.</div>
                 <div *ngIf="username.errors.cannotContainSpace">Username can not contain space</div>
-                <div *ngIf="username.errors.shoulBeUnique">Username is already taken.</div>
+                <div *ngIf="username.errors.shouldBeUnique">Username is already taken.</div>
         </div>
     </div>
 
